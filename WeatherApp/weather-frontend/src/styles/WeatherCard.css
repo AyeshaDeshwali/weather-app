@@ -85,7 +85,6 @@
   font-size: 20px;
   display: flex;
   justify-content: space-between;
-  gap: 90px;
   margin: 10px 0;
 }
 
@@ -266,7 +265,6 @@
 
   .weather-content {
     flex-direction: column;
-    gap: 25px;
     align-items: center;
   }
 
@@ -311,9 +309,8 @@
 
   .feels-like,
   .temp-range {
-    justify-content: center;
+    justify-content: space-between;
     margin: 10px 0;
-    gap: 20px;
   }
 
   .toggle {
@@ -322,7 +319,9 @@
   }
 
   .toggle span {
-    font-size: 18px;
+    font-size: 21px;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
   }
 }
 
@@ -339,30 +338,36 @@
 
   .temp {
     font-size: 36px;
+    margin-top: 0px;
   }
 
   .weather-icon {
     width: 60px;
+    margin-top: -30px;
   }
 
   .description {
-    font-size: 15px;
+    font-size: 18px;
     position: static;
-    margin-top: -10px;
+    margin-top: 10px;
   }
 
   .date {
     font-size: 13px;
     margin-bottom: 10px;
+    margin-top: -10px;
   }
 
-  .feels-like,
+  /* .feels-like,
   .temp-range {
     flex-direction: column;
     align-items: center;
     gap: 6px;
-  }
+  } */
 
+  .feels-like {
+    margin-top: -10px;
+  }
   .extra-details {
     flex-direction: column;
     align-items: center;
@@ -374,7 +379,9 @@
   }
 
   .toggle span {
-    font-size: 14px;
+    font-size: 21px;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
   }
 
   .toggle-btn {
