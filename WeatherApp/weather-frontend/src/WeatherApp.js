@@ -11,6 +11,7 @@ const WeatherApp = ({ onAuthSuccess }) => {
   const [error, setError] = useState("");
   const [currentTime, setCurrentTime] = useState(new Date());
   const [loading, setLoading] = useState(false);
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
 
   useEffect(() => {
     const updateClock = () => {
@@ -86,15 +87,28 @@ const WeatherApp = ({ onAuthSuccess }) => {
       setLoading(false);
     }
   };
+  // const handleLogout = () => {
+  //   const confirmLogout = window.confirm("Are you sure you want to logout?");
+  //   if (confirmLogout) {
+  //     localStorage.removeItem("token");
+  //     localStorage.removeItem("user");
+  //     onAuthSuccess(null);
+  //   }
+  // };
   const handleLogout = () => {
-    const confirmLogout = window.confirm("Are you sure you want to logout?");
-    if (confirmLogout) {
-      localStorage.removeItem("token");
-      localStorage.removeItem("user");
-      onAuthSuccess(null);
-    }
+    setShowLogoutModal(true);
   };
 
+  const confirmLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    onAuthSuccess(null);
+    setShowLogoutModal(false);
+  };
+
+  const cancelLogout = () => {
+    setShowLogoutModal(false);
+  };
   return (
     <div className="container">
       <h1>🌤 Weather App</h1>
@@ -114,6 +128,27 @@ const WeatherApp = ({ onAuthSuccess }) => {
             <i className="fas fa-search"></i>
           </button>
         </div>
+        {showLogoutModal && (
+          <div className="modal-overlay">
+            <div className="modal-box">
+              <img
+                src="https://images.freeimages.com/fic/images/icons/1620/crystal_project/128/exit.png"
+                alt="logout-icon"
+                className="logout-icon"
+              />
+              <h3>Logout</h3>
+              <p>Are you sure you want to logout?</p>
+              <div className="modal-buttons">
+                <button className="cancel-btn" onClick={cancelLogout}>
+                  Cancel
+                </button>
+                <button className="confirm-btn" onClick={confirmLogout}>
+                  Yes, Logout !
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Logout Buttons */}
         <div className="logout-container">
