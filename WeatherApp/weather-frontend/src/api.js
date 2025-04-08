@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = process.env.REACT_APP_API_URL;
 
 export const getWeatherByCoords = async (lat, lon) => {
   const response = await fetch(
