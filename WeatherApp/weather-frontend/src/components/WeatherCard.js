@@ -16,7 +16,7 @@ const WeatherCard = ({ weather }) => {
 
     const mainWeather = weather.weather[0].main;
     const hours = new Date().getHours();
-    const isDay = hours >= 6 && hours < 18;
+    const isDay = hours >= 6 && hours < 19;
 
     let baseClass = "default-bg";
 
