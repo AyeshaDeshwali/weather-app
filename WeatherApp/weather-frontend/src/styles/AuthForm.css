@@ -1,6 +1,6 @@
 .auth-container {
   width: 300px;
-  margin: 80px auto;
+  margin: 250px auto;
   padding: 30px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -51,4 +51,35 @@
 
 .auth-toggle:hover {
   color: #0056b3;
+}
+.auth-container p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.auth-toggle {
+  margin-left: 5px;
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    width: 250px;
+    margin: 150px 15px;
+    padding: 23px 23px 23px 23px;
+  }
+
+  .auth-input,
+  .auth-button {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .auth-toggle {
+    font-size: 13px;
+  }
 }
