@@ -12,9 +12,10 @@ body {
 
 .container {
   width: 100%;
+  margin-top: 10px;
   /* max-width: 700px; */
   text-align: center;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .container h1,
@@ -39,50 +40,6 @@ p {
 .error i {
   margin-right: 4px;
 }
-/* .input-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1e293b;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.input-container input {
-  width: 520px;
-  height: 45px;
-
-  border: none;
-  outline: none;
-  background: transparent;
-  color: white;
-  font-size: 16px;
-}
-
-.input-container button {
-  background-color: #3b82f6;
-  color: white;
-  border: none;
-  width: 120px;
-  height: 45px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  position: relative;
-  left: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.input-container button:hover {
-  background-color: #2563eb;
-} */
-
-.weather-card {
-  background-color: #1e293b;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
 
 .loader {
   width: 48px;
@@ -104,100 +61,6 @@ p {
   }
 }
 
-/* .day-bg {
-  background: url("https://media.istockphoto.com/id/1007768414/photo/blue-sky-with-bright-sun-and-clouds.jpg?s=612x612&w=0&k=20&c=MGd2-v42lNF7Ie6TtsYoKnohdCfOPFSPQt5XOz4uOy4=")
-    no-repeat center center/cover;
-  color: #000;
-}
-
-.night-bg {
-  background: url("https://i.gifer.com/68n.gif") no-repeat center center/cover;
-  color: #fff;
-} */
-/* 
-.get-weather-btn {
-  background-color: #3b82f6;
-  color: white;
-  border: none;
-  width: 120px;
-  height: 45px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  position: relative;
-  left: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.get-weather-btn:hover {
-  background-color: #2563eb;
-}
-
-.search-icon-btn {
-  background-color: #3b82f6;
-  color: white;
-  border: none;
-  width: 45px;
-  height: 45px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  position: relative;
-  left: 20px;
-  cursor: pointer;
-  display: none; 
-} */
-/* .logout-btn {
-  background-color: #ef4444;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-  margin-left: 20px;
-}
-
-.logout-btn:hover {
-  background-color: #dc2626;
-} */
-/* 
-@media (max-width: 480px) {
-
-  .container {
-    padding: 10px;
-  }
-  .get-weather-btn {
-    display: none;
-  }
-
-  .input-container {
-    width: 300px;
-    padding: 0px 0px 0px 10px;
-  }
-  .search-icon-btn {
-    width: 30px;
-    display: inline-block;
-  }
-
-  .input-container button {
-    width: 50px;
-  }
-
-  .input-container input {
-    width: 70vw; 
-  }
-}
-@media (max-width: 500px) {
-  .logout-btn {
-    display: block;
-    margin: 10px auto 0;
-    width: 80%;
-    font-size: 14px;
-    padding: 10px 0;
-  }
-} */
 .input-logout-wrapper {
   width: 100%;
   display: flex;
@@ -292,9 +155,106 @@ p {
   background-color: #f07979;
 }
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-box {
+  position: relative;
+  background: #fff;
+  padding: 40px 30px 25px;
+  border-radius: 16px;
+  text-align: center;
+  width: 330px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logout-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.modal-box h3 {
+  margin-top: 10px;
+  font-size: 22px;
+  color: #333;
+  font-weight: bold;
+}
+
+.modal-box p {
+  font-size: 15px;
+  color: #555;
+  margin: 15px 0 25px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirm-btn,
+.cancel-btn {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px 0;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #bfe8d2;
+  color: #2e7d32;
+}
+
 /* ------------------- Responsive ------------------- */
 
 @media (max-width: 700px) {
+  .modal-box {
+    width: 250px;
+    box-shadow: rgba(255, 255, 255, 0.432) 0px 4px 12px;
+  }
+  .logout-icon {
+    width: 50px;
+    height: 50px;
+    top: -23px;
+  }
+
+  .modal-box h3 {
+    font-size: 20px;
+  }
+  .modal-box p {
+    font-size: 13px;
+  }
+
+  .confirm-btn,
+  .cancel-btn {
+    flex: 1;
+    margin: 0 5px;
+    padding: 8px 0;
+    font-size: 13px;
+  }
   .get-weather-btn {
     display: none;
   }
