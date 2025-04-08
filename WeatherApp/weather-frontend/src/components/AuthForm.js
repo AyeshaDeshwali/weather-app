@@ -77,7 +77,7 @@ const AuthForm = ({ onAuthSuccess }) => {
         </button>
       </form>
       {error && <p className="auth-error">{error}</p>}
-      <p style={{ marginTop: "15px" }}>
+      <p>
         {isSignup ? "Already have an account?" : "Don't have an account?"}
         <span className="auth-toggle" onClick={() => setIsSignup(!isSignup)}>
           {isSignup ? " Login" : " Sign Up"}
